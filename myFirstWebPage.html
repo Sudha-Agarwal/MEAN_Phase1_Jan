@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>My First Web page</title>
+
+        <style>
+            #p1{
+                color:red;
+                font-size: 20px;
+            }
+            .cls1{
+                color:green;
+            }               
+
+        </style>
+
+        <!--External CSS-->
+        <link rel="stylesheet" href="style.css">
+
+
+    </head>
+
+    <body>
+        <div>
+            <p id="p1" class="cls1">Welcome to my Website</p>
+            <h1 class="cls1 cls2 cls3" id="">Heading 1</h1>    
+        </div>
+
+         <p class="cls1">Thanks for visiting us!!!</p>
+
+         <button onclick="onButtonClicked()">Click to Change</button>
+        
+         <!-- Internal JavaScript-->
+        <script>
+            //document.getElementById("p1").innerHTML = "Changed by JS";
+        </script>
+
+        <!-- External JS-->
+        <script src="js/script1.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
