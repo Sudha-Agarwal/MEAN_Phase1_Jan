@@ -34,12 +34,13 @@ class Account {
         this.type = type;      
 
         this.deposit = function (amount) {
-            this.bal = this.bal + amount;
+            this.balance = this.balance + amount;
         };
         this.withdraw = function (amount) {
-            this.bal = this.bal - amount;
+            this.balance = this.balance - amount;
         };
         this.getBal = function () {
+            console.log("Balance is: " + this.balance);
         };
     }
 }
@@ -57,4 +58,74 @@ class DematAccount extends Account{
 
 }
 
-new SavingsAccount();
+var account1 = new Account(10000,123,"Savings");
+
+account1.getBal();
+account1.deposit(500);
+account1.getBal();
+
+
+class Person1{
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    /*name;
+    age;
+    height;
+    weight;
+    legs2;
+    address;
+    adhhar_no;
+    gender;
+    */
+}
+
+class Employee extends Person{
+    empId;
+    dept;
+
+}
+
+class Student extends Person{
+    rollNo;
+}
+
+class Animal{   
+  constructor(tail,legs,specie){
+    this.tail = tail;
+    this.legs = legs;
+    this.specie = specie;
+  }
+  showDetails(){
+    console.log(this.specie + " having legs " + this.legs);
+  }
+}
+class Dog extends Animal{
+   senseOfsmell;
+    constructor(tail,legs,specie,loyalty){
+        super(tail,legs,specie);//call the constructor of the parent class
+         this.loyalty = loyalty;
+    }   
+    setSenseofSmell(senseOfsmell){
+        this.senseOfsmell = senseOfsmell;
+    }
+
+    //method/function overriding
+    showDetails(){
+        super.showDetails();
+        console.log("sense of smell: " + this.senseOfsmell);
+    }
+}
+class Cow extends Animal{
+    givesMilk;
+}
+
+var dog1 = new Dog(true,4,"pug",true);
+dog1.setSenseofSmell("strong");
+dog1.showDetails();
+
+var person1 = new Person();
+var person2 = new Person();
+
+
