@@ -11,7 +11,7 @@ one("parameter1", two);
 
 //some js statements
 //read operation - it will take some time
-//print data
+//print data/process data
 //some js statements
 
 
@@ -31,6 +31,7 @@ function three(){
 }
 //First way
 //one(two);
+
 //second way
 one(function(param2){
     console.log(param2);
