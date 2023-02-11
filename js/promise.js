@@ -40,3 +40,5 @@ myAsyncFunction("Sudha").then(
     data => console.log(data),
     error=>console.log(error)
 );
+myAsyncFunction("Sudha").then(data => console.log(data)).catch(data=> console.log(data));
+
