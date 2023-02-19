@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <h1>Authors</h1>
+    <div id="main"></div>
+
+<script>
+   const url = 'https://jsonplaceholder.typicode.com/users';
+
+  fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      let authors = [];
+      authors = data;
+      console.log(authors);
+
+      let output = ''
+        // loop over the array      
+          // set first row
+          output += `<div class="container-lg my-5">
+            <div class="m-4">
+                <table class="table table-bordered table-striped table-hover">
+                    <thead>
+                        <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        `     
+                authors.forEach(item => {  
+             output += ` 
+             <tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.username}</td>
+                <td>${item.email}</td>
+                </tr>             
+             `
+          })
+          // close the row
+          output += '</tbody></table></div></div>'
+        main.innerHTML = output;
+
+    })
+    .catch(function(error) {
+      console.log(error);
+    }); 
+
+
+
+    function postData(){
+        const url = 'https://jsonplaceholder.typicode.com/users';
+
+let data = {
+  name: 'Sammy'
+}
+
+let fetchData = {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: new Headers({
+    'Content-Type': 'application/json; charset=UTF-8'
+  })
+}
+
+fetch(url, fetchData)
+  .then(function() {
+    // Handle response you get from the API
+  });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    
+
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/users";
+
+        fetch(url,{method:'GET'})
+        .then(function(response){
+            return response.json();
+        }).then(function(data){
+            console.log(data);
+        });
+
+        //with arrow
+        fetch(url,{method:'POST',body:JSON.stringify({id:12})})
+        .then(response1 => response1.json())
+        .then(data1 => console.log(data1))
+        .catch(error1 => console.log(error1));
+
+    </script>
+</body>
+</html>
